@@ -18,6 +18,7 @@ public class background extends JFrame {
 		// 스윙에서 창 닫기 싱행 정의
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// ImageIcon image = new ImageIcon("../src/image/back.png");
+		// 주석해보기
 		f.getContentPane().setBackground(Color.black);
 		/*JLabel jla = new JLabel(image);
 		jla.setSize(1600, 900);

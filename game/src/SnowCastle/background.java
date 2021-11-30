@@ -1,6 +1,9 @@
 package SnowCastle;
 
+import java.net.URL;
+
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -16,13 +19,16 @@ public class background extends JFrame {
 		frame.setLayout(null);//레이아웃을 내맘대로 설정가능하게 해줌.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//JFrame이 정상적으로 종료되게
 		
+		
 		// 처음 스플래쉬 화면 띄우기
-		ImageIcon ii = new ImageIcon("../game/src/SnowCastle/winter_back.png");
+		ImageIcon ii = new ImageIcon("../game/src/SnowCastle/winterBack1.png");
 		JLabel jl = new JLabel(ii);
 		jl.setSize(1920,1080);
 		frame.add(jl);
 		frame.setLayout(null);
 		frame.setVisible(true);
+		
+
 	}
 }
 

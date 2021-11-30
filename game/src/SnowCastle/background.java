@@ -44,9 +44,14 @@ public class background extends JFrame {
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.setLayout(null);
 		
-		jbutton.setBounds(200, 200, 500, 150);
-		jbutton.setSize(400, 180);
-		jframe.add(jbutton);
+		jframe.getContentPane().add(jbutton);
+		
+		jbutton.setBorderPainted(false);
+		jbutton.setContentAreaFilled(false);
+		
+		jbutton.setBounds(200, 0, 480, 180);
+		jbutton.setSize(340, 180);
+
 		
 
 	}

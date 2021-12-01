@@ -38,32 +38,52 @@ public class background extends JFrame {
 
 
 		JPanel main_pannel;
-		JButton btnStart;
+		JButton btnStart, QuesionBox;
+		JLabel LogoImageBox;
 		ImageIcon img = new ImageIcon("../game/src/SnowCastle/startBtn.png");
+		ImageIcon logoimg = new ImageIcon("../game/src/SnowCastle/logo.png");
+		ImageIcon Queimg = new ImageIcon("../game/src/SnowCastle/Q.png");
 		
 		//ImageIcon에서 Image를 추출
 		Image originImg = img.getImage(); 
+		Image logoOriginImg = logoimg.getImage();
+		Image QoriginImg = Queimg.getImage();
 		
 		//추출된 Image의 크기를 조절하여 새로운 Image객체 생성
-		Image changedImg= originImg.getScaledInstance(400, 180, Image.SCALE_SMOOTH );
-
+		Image changedImg= originImg.getScaledInstance(300, 150, Image.SCALE_SMOOTH );
+		Image changedlogoImg = logoOriginImg.getScaledInstance(950, 250, Image.SCALE_SMOOTH);
+		Image changedQimg = QoriginImg.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+		
 		//새로운 Image로 ImageIcon객체를 생성
 		ImageIcon startbtn = new ImageIcon(changedImg);
-		
+		ImageIcon mainLogo = new ImageIcon(changedlogoImg);
+		ImageIcon question = new ImageIcon(changedQimg);
 		
 		
 		main_pannel = new JPanel();		// 패널 객체화 /]
 		btnStart = new JButton(startbtn);
+		LogoImageBox = new JLabel(mainLogo);
+		QuesionBox = new JButton(question);
 		
+		// 패널에 갖다 붙이기
+		jl.add(LogoImageBox);
 		jl.add(btnStart);
+		jl.add(QuesionBox);
 		
 		// 로그인 버튼
-		btnStart.setBounds(580, 500, 400, 180); // 좌표, 가로, 세로 설정
+		btnStart.setBounds(580, 590, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);
 		btnStart.setVisible(true);
 		
+		LogoImageBox.setBounds(300, 180, 1000, 250);
+		
+		QuesionBox.setBounds(1380, -90, 300, 300);
+		QuesionBox.setBorderPainted(false);
+		QuesionBox.setContentAreaFilled(false);
+		QuesionBox.setOpaque(false);
+		QuesionBox.setVisible(true);
 		
 		
 		

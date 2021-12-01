@@ -30,7 +30,6 @@ public class background extends JFrame {
 		frame.setLayout(null);//레이아웃을 내맘대로 설정가능하게 해줌.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//JFrame이 정상적으로 종료되게
 		
-		// 처음 스플래쉬 화면 띄우기
 		ImageIcon ii = new ImageIcon("../game/src/SnowCastle/startback.jpg");
 		JLabel jl = new JLabel(ii);
 		jl.setSize(1600, 900);
@@ -99,10 +98,19 @@ public class background extends JFrame {
 	        }
 	    });
 		
+		// 시작 버튼 클릭
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new game();
 				frame.dispose();
+				new game();
+			}
+		});
+		
+		// Question 버튼 클릭
+		QuestionBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				new Question();
 			}
 		});
 }

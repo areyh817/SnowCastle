@@ -71,15 +71,17 @@ public class background extends JFrame {
 		jl.add(btnStart);
 		jl.add(QuestionBox);
 		
-		// 로그인 버튼
+		// 게임 시작 버튼
 		btnStart.setBounds(580, 590, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);
 		btnStart.setVisible(true);
 		
+		// 로고
 		LogoImageBox.setBounds(300, 180, 1000, 250);
 		
+		// ? 버튼
 		QuestionBox.setBounds(1380, -90, 300, 300);
 		QuestionBox.setBorderPainted(false);
 		QuestionBox.setContentAreaFilled(false);

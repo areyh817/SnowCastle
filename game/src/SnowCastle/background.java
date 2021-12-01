@@ -54,6 +54,9 @@ public class background extends JFrame {
 		
 		main_pannel = new JPanel();		// 패널 객체화 /]
 		btnStart = new JButton(startbtn);
+		
+		jl.add(btnStart);
+		
 		// 로그인 버튼
 		btnStart.setBounds(580, 500, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
@@ -61,7 +64,7 @@ public class background extends JFrame {
 		btnStart.setOpaque(false);
 		btnStart.setVisible(true);
 		
-		jl.add(btnStart);
+		
 		
 		
 

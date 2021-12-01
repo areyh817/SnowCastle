@@ -15,13 +15,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class background extends JFrame {
 	
 	public static void main(String[] args) {
 
 		
-		JFrame frame = new JFrame();
+		JFrame frame = new JFrame("SnowCastle");
 		frame.setSize(1600,900);//프레임의 크기
 		frame.setResizable(false);//창의 크기를 변경하지 못하게
 		frame.setLocationRelativeTo(null);//창이 가운데 나오게
@@ -38,7 +40,7 @@ public class background extends JFrame {
 
 
 		JPanel main_pannel;
-		JButton btnStart, QuesionBox;
+		JButton btnStart, QuestionBox;
 		JLabel LogoImageBox;
 		ImageIcon img = new ImageIcon("../game/src/SnowCastle/startBtn.png");
 		ImageIcon logoimg = new ImageIcon("../game/src/SnowCastle/logo.png");
@@ -60,15 +62,15 @@ public class background extends JFrame {
 		ImageIcon question = new ImageIcon(changedQimg);
 		
 		
-		main_pannel = new JPanel();		// 패널 객체화 /]
+		main_pannel = new JPanel();		// 패널 객체화 
 		btnStart = new JButton(startbtn);
 		LogoImageBox = new JLabel(mainLogo);
-		QuesionBox = new JButton(question);
+		QuestionBox = new JButton(question);
 		
 		// 패널에 갖다 붙이기
 		jl.add(LogoImageBox);
 		jl.add(btnStart);
-		jl.add(QuesionBox);
+		jl.add(QuestionBox);
 		
 		// 로그인 버튼
 		btnStart.setBounds(580, 590, 400, 180); // 좌표, 가로, 세로 설정
@@ -79,18 +81,31 @@ public class background extends JFrame {
 		
 		LogoImageBox.setBounds(300, 180, 1000, 250);
 		
-		QuesionBox.setBounds(1380, -90, 300, 300);
-		QuesionBox.setBorderPainted(false);
-		QuesionBox.setContentAreaFilled(false);
-		QuesionBox.setOpaque(false);
-		QuesionBox.setVisible(true);
+		QuestionBox.setBounds(1380, -90, 300, 300);
+		QuestionBox.setBorderPainted(false);
+		QuestionBox.setContentAreaFilled(false);
+		QuestionBox.setOpaque(false);
+		QuestionBox.setVisible(true);
 		
+		btnStart.getModel().addChangeListener(new ChangeListener() {
+	        @Override
+	        public void stateChanged(ChangeEvent e) {
+	            ButtonModel model = (ButtonModel) e.getSource();
+	            if (model.isRollover()) {
+	            	btnStart.setBorderPainted(false); // 테두리 보이게
+	            } else {
+	            	btnStart.setBorderPainted(false); // 테두리 안보이게
+	            }
+	        }
+	    });
 		
-		
-
-		
-
-	}
+		btnStart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new game();
+				frame.dispose();
+			}
+		});
+}
 }
 
 

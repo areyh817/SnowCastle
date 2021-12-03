@@ -104,7 +104,7 @@ public class background extends JFrame {
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				new game();
+				new userinfo();
 			}
 		});
 		

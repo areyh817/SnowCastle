@@ -9,18 +9,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.Border;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
-public class userinfo extends JFrame implements ActionListener {
+public class scoreTest extends JFrame implements ActionListener {
 	
 	JFrame frame = new JFrame("SnowCastle");
 	public Label la = new Label();
-	String name;
-    Connection conn = null;
-    
-	public userinfo() {
+	
+	public scoreTest() {
 		
 		//JFrame frame = new JFrame("SnowCastle");
 		frame.setSize(1600,900);//프레임의 크기
@@ -71,32 +66,7 @@ public class userinfo extends JFrame implements ActionListener {
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				new scoreTest();
-				name = inputName.getText();
-		        try{
-		            Class.forName("com.mysql.jdbc.Driver");
-		            String url = "jdbc:mysql://localhost:3308/snow";
-		            conn = DriverManager.getConnection(url, "root", "2118");
-		            System.out.println("연결 성공");
-		            System.out.println(name);
-
-		        }
-		        catch(ClassNotFoundException e1){
-		            System.out.println("드라이버 로딩 실패");
-		        }
-		        catch(SQLException e1){
-		            System.out.println("에러: " + e1);
-		        }
-		        finally{
-		            try{
-		                if( conn != null && !conn.isClosed()){
-		                    conn.close();
-		                }
-		            }
-		            catch( SQLException e1){
-		                e1.printStackTrace();
-		            }
-		        }
+				new insert();
 			}
 		});
 	}
@@ -106,7 +76,7 @@ public class userinfo extends JFrame implements ActionListener {
 	}
 	
 	public static void main(String[] args) {
-		userinfo user = new userinfo();
+		scoreTest score = new scoreTest();
 	}
 
 	@Override

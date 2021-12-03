@@ -11,6 +11,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class userinfo extends JFrame implements ActionListener {
@@ -19,6 +20,7 @@ public class userinfo extends JFrame implements ActionListener {
 	public Label la = new Label();
 	String name;
     Connection conn = null;
+    PreparedStatement pstmt = null;
     
 	public userinfo() {
 		
@@ -77,6 +79,10 @@ public class userinfo extends JFrame implements ActionListener {
 		            Class.forName("com.mysql.jdbc.Driver");
 		            String url = "jdbc:mysql://localhost:3308/snow";
 		            conn = DriverManager.getConnection(url, "root", "2118");
+		            String SQL = "insert into snowtest values(?)";
+		            pstmt = conn.prepareStatement(SQL);
+		            pstmt.setString(1, name);
+		            pstmt.executeUpdate();
 		            System.out.println("연결 성공");
 		            System.out.println(name);
 

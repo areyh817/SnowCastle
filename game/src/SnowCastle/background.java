@@ -51,7 +51,7 @@ public class background extends JFrame {
 		Image QoriginImg = Queimg.getImage();
 		
 		//추출된 Image의 크기를 조절하여 새로운 Image객체 생성
-		Image changedImg= originImg.getScaledInstance(400, 150, Image.SCALE_SMOOTH );
+		Image changedImg= originImg.getScaledInstance(300, 150, Image.SCALE_SMOOTH );
 		Image changedlogoImg = logoOriginImg.getScaledInstance(950, 250, Image.SCALE_SMOOTH);
 		Image changedQimg = QoriginImg.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
 		

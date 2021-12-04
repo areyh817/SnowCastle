@@ -25,15 +25,15 @@ public class userinfo extends JFrame implements ActionListener {
 	public userinfo() {
 		
 		//JFrame frame = new JFrame("SnowCastle");
-		frame.setSize(1600,900);//프레임의 크기
+		frame.setSize(1920,1080);//프레임의 크기
 		frame.setResizable(false);//창의 크기를 변경하지 못하게
 		frame.setLocationRelativeTo(null);//창이 가운데 나오게
 		frame.setLayout(null);//레이아웃을 내맘대로 설정가능하게 해줌.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//JFrame이 정상적으로 종료되게
 		
-		ImageIcon ii = new ImageIcon("../game/src/SnowCastle/usernameadd.png");
+		ImageIcon ii = new ImageIcon("../game/src/SnowCastle/biginfo.png");
 		JLabel jl = new JLabel(ii);
-		jl.setSize(1600, 900);
+		jl.setSize(1920, 1080);
 		frame.add(jl);
 		frame.setLayout(null);
 		frame.setVisible(true);
@@ -48,7 +48,7 @@ public class userinfo extends JFrame implements ActionListener {
 		jl.add(inputName);
 		inputName.setFont(font);
 		inputName.setBorder(BorderFactory.createMatteBorder(3, 0, 3, 0, Color.WHITE));
-		inputName.setBounds(530, 500, 548, 100);
+		inputName.setBounds(665, 600, 548, 100);
 		inputName.setText("");
 		inputName.setOpaque(false);
 		inputName.setEditable(true);
@@ -63,7 +63,7 @@ public class userinfo extends JFrame implements ActionListener {
 		main_pannel = new JPanel();		// 패널 객체화 
 		btnStart = new JButton(startbtn);
 		jl.add(btnStart);
-		btnStart.setBounds(578, 650, 400, 180); // 좌표, 가로, 세로 설정
+		btnStart.setBounds(730, 750, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);

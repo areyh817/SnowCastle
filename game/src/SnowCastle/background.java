@@ -51,7 +51,7 @@ public class background extends JFrame {
 		Image QoriginImg = Queimg.getImage();
 		
 		//추출된 Image의 크기를 조절하여 새로운 Image객체 생성
-		Image changedImg= originImg.getScaledInstance(300, 150, Image.SCALE_SMOOTH );
+		Image changedImg= originImg.getScaledInstance(350, 165, Image.SCALE_SMOOTH );
 		Image changedlogoImg = logoOriginImg.getScaledInstance(950, 250, Image.SCALE_SMOOTH);
 		Image changedQimg = QoriginImg.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
 		
@@ -72,17 +72,17 @@ public class background extends JFrame {
 		jl.add(QuestionBox);
 		
 		// 게임 시작 버튼
-		btnStart.setBounds(580, 590, 400, 180); // 좌표, 가로, 세로 설정
+		btnStart.setBounds(760, 700, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);
 		btnStart.setVisible(true);
 		
 		// 로고
-		LogoImageBox.setBounds(300, 180, 1000, 250);
+		LogoImageBox.setBounds(440, 230, 1000, 250);
 		
 		// ? 버튼
-		QuestionBox.setBounds(1380, -90, 300, 300);
+		QuestionBox.setBounds(1700, -90, 300, 300);
 		QuestionBox.setBorderPainted(false);
 		QuestionBox.setContentAreaFilled(false);
 		QuestionBox.setOpaque(false);

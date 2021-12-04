@@ -15,15 +15,15 @@ public class Question extends JFrame implements ActionListener {
 	public Question() {
 		
 		//JFrame frame = new JFrame("SnowCastle");
-		frame.setSize(1600,900);//프레임의 크기
+		frame.setSize(1920,1080);//프레임의 크기
 		frame.setResizable(false);//창의 크기를 변경하지 못하게
 		frame.setLocationRelativeTo(null);//창이 가운데 나오게
 		frame.setLayout(null);//레이아웃을 내맘대로 설정가능하게 해줌.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//JFrame이 정상적으로 종료되게
 		
-		ImageIcon ii = new ImageIcon("../game/src/SnowCastle/gamedesc3.png");
+		ImageIcon ii = new ImageIcon("../game/src/SnowCastle/bigdesc.png");
 		JLabel jl = new JLabel(ii);
-		jl.setSize(1600, 900);
+		jl.setSize(1920, 1080);
 		frame.add(jl);
 		frame.setLayout(null);
 		frame.setVisible(true);
@@ -35,13 +35,13 @@ public class Question extends JFrame implements ActionListener {
 		ImageIcon img = new ImageIcon("../game/src/SnowCastle/startBtn.png");
 		
 		Image originImg = img.getImage(); 
-		Image changedImg= originImg.getScaledInstance(300, 140, Image.SCALE_SMOOTH );
+		Image changedImg= originImg.getScaledInstance(350, 165, Image.SCALE_SMOOTH );
 		ImageIcon startbtn = new ImageIcon(changedImg);
 		
 		main_pannel = new JPanel();		// 패널 객체화 
 		btnStart = new JButton(startbtn);
 		jl.add(btnStart);
-		btnStart.setBounds(578, 650, 400, 180); // 좌표, 가로, 세로 설정
+		btnStart.setBounds(760, 760, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);

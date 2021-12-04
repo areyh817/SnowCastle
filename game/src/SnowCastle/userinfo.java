@@ -75,13 +75,15 @@ public class userinfo extends JFrame implements ActionListener {
 				frame.dispose();
 				new scoreTest();
 				name = inputName.getText();
+				int score = 250;
 		        try{
 		            Class.forName("com.mysql.jdbc.Driver");
 		            String url = "jdbc:mysql://localhost:3308/snow";
 		            conn = DriverManager.getConnection(url, "root", "2118");
-		            String SQL = "insert into snowtest values(?)";
+		            String SQL = "insert into score values(?, ?)";
 		            pstmt = conn.prepareStatement(SQL);
-		            pstmt.setString(1, name);
+		            pstmt.setLong(1, score);
+		            pstmt.setString(2, name);
 		            pstmt.executeUpdate();
 		            System.out.println("연결 성공");
 		            System.out.println(name);

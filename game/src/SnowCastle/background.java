@@ -24,7 +24,7 @@ public class background extends JFrame {
 
 		
 		JFrame frame = new JFrame("SnowCastle");
-		frame.setSize(1600,900);//프레임의 크기
+		frame.setSize(1920,1080);//프레임의 크기
 		frame.setResizable(false);//창의 크기를 변경하지 못하게
 		frame.setLocationRelativeTo(null);//창이 가운데 나오게
 		frame.setLayout(null);//레이아웃을 내맘대로 설정가능하게 해줌.
@@ -32,7 +32,7 @@ public class background extends JFrame {
 		
 		ImageIcon ii = new ImageIcon("../game/src/SnowCastle/startback.jpg");
 		JLabel jl = new JLabel(ii);
-		jl.setSize(1600, 900);
+		jl.setSize(1920, 1080);
 		frame.add(jl);
 		frame.setLayout(null);
 		frame.setVisible(true);
@@ -51,7 +51,7 @@ public class background extends JFrame {
 		Image QoriginImg = Queimg.getImage();
 		
 		//추출된 Image의 크기를 조절하여 새로운 Image객체 생성
-		Image changedImg= originImg.getScaledInstance(300, 150, Image.SCALE_SMOOTH );
+		Image changedImg= originImg.getScaledInstance(400, 150, Image.SCALE_SMOOTH );
 		Image changedlogoImg = logoOriginImg.getScaledInstance(950, 250, Image.SCALE_SMOOTH);
 		Image changedQimg = QoriginImg.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
 		

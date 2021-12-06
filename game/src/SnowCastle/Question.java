@@ -35,13 +35,13 @@ public class Question extends JFrame implements ActionListener {
 		ImageIcon img = new ImageIcon("../game/src/SnowCastle/startBtn.png");
 		
 		Image originImg = img.getImage(); 
-		Image changedImg= originImg.getScaledInstance(350, 165, Image.SCALE_SMOOTH );
+		Image changedImg= originImg.getScaledInstance(300, 150, Image.SCALE_SMOOTH );
 		ImageIcon startbtn = new ImageIcon(changedImg);
 		
 		main_pannel = new JPanel();		// 패널 객체화 
 		btnStart = new JButton(startbtn);
 		jl.add(btnStart);
-		btnStart.setBounds(760, 760, 400, 180); // 좌표, 가로, 세로 설정
+		btnStart.setBounds(760, 820, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);

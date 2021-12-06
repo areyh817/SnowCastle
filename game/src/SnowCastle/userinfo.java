@@ -75,7 +75,7 @@ public class userinfo extends JFrame implements ActionListener {
 				frame.dispose();
 				new scoreTest();
 				name = inputName.getText();
-				int score = 250;
+				int score = 777;
 		        try{
 		            Class.forName("com.mysql.jdbc.Driver");
 		            String url = "jdbc:mysql://localhost:3308/snow";

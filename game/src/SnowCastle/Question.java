@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class Question extends JFrame implements ActionListener {
 	
@@ -46,6 +48,19 @@ public class Question extends JFrame implements ActionListener {
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);
 		btnStart.setVisible(true);
+		
+		
+		btnStart.getModel().addChangeListener(new ChangeListener() {
+	        @Override
+	        public void stateChanged(ChangeEvent e) {
+	            ButtonModel model = (ButtonModel) e.getSource();
+	            if (model.isRollover()) {
+	            	btnStart.setBorderPainted(false); // 테두리 보이게
+	            } else {
+	            	btnStart.setBorderPainted(false); // 테두리 안보이게
+	            }
+	        }
+	    });
 		
 		// 시작 버튼 클릭
 		btnStart.addActionListener(new ActionListener() {

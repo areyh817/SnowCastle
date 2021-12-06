@@ -37,40 +37,46 @@ public class background extends JFrame implements ActionListener {
 
 
 		JPanel main_pannel;
-		JButton btnStart, QuestionBox;
+		JButton btnStart, QuestionBox, btnRanking;
 		JLabel LogoImageBox;
 		ImageIcon img = new ImageIcon("../game/src/SnowCastle/startBtn.png");
 		ImageIcon logoimg = new ImageIcon("../game/src/SnowCastle/logo.png");
 		ImageIcon Queimg = new ImageIcon("../game/src/SnowCastle/Q.png");
+		ImageIcon Ranimg = new ImageIcon("../game/src/SnowCastle/ranimg.png");
 		
 		//ImageIcon에서 Image를 추출
 		Image originImg = img.getImage(); 
 		Image logoOriginImg = logoimg.getImage();
 		Image QoriginImg = Queimg.getImage();
+		Image ranoriginImg = Ranimg.getImage();
 		
 		//추출된 Image의 크기를 조절하여 새로운 Image객체 생성
 		Image changedImg= originImg.getScaledInstance(350, 165, Image.SCALE_SMOOTH );
 		Image changedlogoImg = logoOriginImg.getScaledInstance(950, 250, Image.SCALE_SMOOTH);
 		Image changedQimg = QoriginImg.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+		Image chagedRanimg = ranoriginImg.getScaledInstance(330, 180, Image.SCALE_SMOOTH);
 		
 		//새로운 Image로 ImageIcon객체를 생성
 		ImageIcon startbtn = new ImageIcon(changedImg);
 		ImageIcon mainLogo = new ImageIcon(changedlogoImg);
 		ImageIcon question = new ImageIcon(changedQimg);
+		ImageIcon ranking = new ImageIcon(chagedRanimg);
 		
 		
 		main_pannel = new JPanel();		// 패널 객체화 
 		btnStart = new JButton(startbtn);
 		LogoImageBox = new JLabel(mainLogo);
 		QuestionBox = new JButton(question);
+		btnRanking = new JButton(ranking);
 		
 		// 패널에 갖다 붙이기
 		jl.add(LogoImageBox);
 		jl.add(btnStart);
 		jl.add(QuestionBox);
+		jl.add(btnRanking);
 		
 		// 게임 시작 버튼
-		btnStart.setBounds(760, 700, 400, 180); // 좌표, 가로, 세로 설정
+		btnStart.setBounds(530, 710, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);
@@ -86,7 +92,26 @@ public class background extends JFrame implements ActionListener {
 		QuestionBox.setOpaque(false);
 		QuestionBox.setVisible(true);
 		
+		// 랭킹 버튼
+		btnRanking.setBounds(920, 700, 400, 180);
+		btnRanking.setBorderPainted(false);
+		btnRanking.setContentAreaFilled(false);
+		btnRanking.setOpaque(false);
+		btnRanking.setVisible(true);
+		
 		btnStart.getModel().addChangeListener(new ChangeListener() {
+	        @Override
+	        public void stateChanged(ChangeEvent e) {
+	            ButtonModel model = (ButtonModel) e.getSource();
+	            if (model.isRollover()) {
+	            	btnStart.setBorderPainted(false); // 테두리 보이게
+	            } else {
+	            	btnStart.setBorderPainted(false); // 테두리 안보이게
+	            }
+	        }
+	    });
+		
+		QuestionBox.getModel().addChangeListener(new ChangeListener() {
 	        @Override
 	        public void stateChanged(ChangeEvent e) {
 	            ButtonModel model = (ButtonModel) e.getSource();
@@ -113,7 +138,19 @@ public class background extends JFrame implements ActionListener {
 				new Question();
 			}
 		});
-	}
+		
+		// ranking 버튼 클릭
+		btnRanking.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				new ranking();
+			}
+		});
+	
+	
+
+}
+
 	
 	public static void main(String[] args) {
 

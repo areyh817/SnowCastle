@@ -18,12 +18,10 @@ import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class background extends JFrame {
-	
-	public static void main(String[] args) {
+public class background extends JFrame implements ActionListener {
+	JFrame frame = new JFrame("SnowCastle");
+	public background(){
 
-		
-		JFrame frame = new JFrame("SnowCastle");
 		frame.setSize(1920,1080);//프레임의 크기
 		frame.setResizable(false);//창의 크기를 변경하지 못하게
 		frame.setLocationRelativeTo(null);//창이 가운데 나오게
@@ -115,7 +113,23 @@ public class background extends JFrame {
 				new Question();
 			}
 		});
-}
+	}
+	
+	public static void main(String[] args) {
+
+		background back = new background();
+		
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		frame.setVisible(false);
+		setVisible(true);
+		
+	}
 }
 
 

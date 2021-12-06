@@ -47,23 +47,36 @@ public class ranking extends JFrame implements ActionListener {
 		frame.setVisible(true);
 		
 		JPanel main_pannel;
-		JButton btnStart;
+		JButton btnStart, btnReStart;
 		JLabel LogoImageBox;
 		
-		ImageIcon img = new ImageIcon("../game/src/SnowCastle/startBtn.png");
+		ImageIcon img = new ImageIcon("../game/src/SnowCastle/homebtn.png");
+		ImageIcon restartimg = new ImageIcon("../game/src/SnowCastle/restartbtn.png");
 		
 		Image originImg = img.getImage(); 
-		Image changedImg= originImg.getScaledInstance(300, 150, Image.SCALE_SMOOTH );
+		Image changedImg= originImg.getScaledInstance(300, 160, Image.SCALE_SMOOTH );
 		ImageIcon startbtn = new ImageIcon(changedImg);
+		
+		Image originrestart = restartimg.getImage(); 
+		Image reChange= originrestart.getScaledInstance(300, 160, Image.SCALE_SMOOTH );
+		ImageIcon restart = new ImageIcon(reChange);
 		
 		main_pannel = new JPanel();		// 패널 객체화 
 		btnStart = new JButton(startbtn);
 		jl.add(btnStart);
-		btnStart.setBounds(760, 820, 400, 180); // 좌표, 가로, 세로 설정
+		btnStart.setBounds(600, 810, 400, 180); // 좌표, 가로, 세로 설정
 		btnStart.setBorderPainted(false);
 		btnStart.setContentAreaFilled(false);
 		btnStart.setOpaque(false);
 		btnStart.setVisible(true);
+		
+		btnReStart = new JButton(restart);
+		jl.add(btnReStart);
+		btnReStart.setBounds(950, 810, 400, 180); // 좌표, 가로, 세로 설정
+		btnReStart.setBorderPainted(false);
+		btnReStart.setContentAreaFilled(false);
+		btnReStart.setOpaque(false);
+		btnReStart.setVisible(true);
 		
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -80,9 +93,9 @@ public class ranking extends JFrame implements ActionListener {
             	System.out.println(name + " " + score); 
 				jl.add(txtResult);
 				txtResult.setVisible(true);
-				txtResult.setBounds(850, 400, 400, 900);
+				txtResult.setBounds(850, 330, 400, 900);
 				txtResult.setOpaque(false);
-				Color color = new Color(0, 1, 245);
+				Color color = new Color(58, 105, 245);
 				txtResult.setForeground(color);
 				txtResult.setFont(font);
 				String str = rs.getString("name") + "\t" + rs.getInt("score")+"\n";  
@@ -112,7 +125,7 @@ public class ranking extends JFrame implements ActionListener {
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				new game();
+				new background();
 			}
 		});
 	}
